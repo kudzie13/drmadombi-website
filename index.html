@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. S.W. Madombi — Obstetrician & Gynaecologist | Harare</title>
+  <meta name="description" content="Dr. S.W. Madombi, MBChB(UZ); Mmed Obs & Gyn(UZ). Specialist Obstetrician and Gynaecologist based in Harare, Zimbabwe. Antenatal care, ultrasound, gynaecological services and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #0e2240;
+      --navy-mid:#163366;
+      --red:     #c0281e;
+      --red-soft:#e03a27;
+      --cream:   #faf8f5;
+      --warm-gray:#f0ede8;
+      --text:    #1a1a2e;
+      --muted:   #6b7280;
+      --white:   #ffffff;
+      --border:  #ddd8d0;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'DM Sans', system-ui, sans-serif;
+      --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--cream);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--cream); }
+    ::-webkit-scrollbar-thumb { background: var(--navy-mid); border-radius: 3px; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(14, 34, 64, 0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 0 2rem;
+      height: 68px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 12px; text-decoration: none;
+    }
+    .nav-logo-mark {
+      width: 38px; height: 38px;
+      background: linear-gradient(135deg, var(--red) 0%, #8b0000 100%);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display);
+      color: white; font-size: 18px; font-weight: 600;
+      flex-shrink: 0;
+    }
+    .nav-logo-text { color: white; }
+    .nav-logo-text strong { display: block; font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; letter-spacing: 0.02em; }
+    .nav-logo-text span { font-size: 0.7rem; color: rgba(255,255,255,0.55); letter-spacing: 0.08em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.75); text-decoration: none;
+      font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+      transition: color var(--transition);
+      position: relative; padding-bottom: 2px;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 2px;
+      background: var(--red-soft); transform: scaleX(0); transition: transform var(--transition);
+    }
+    .nav-links a:hover, .nav-links a.active { color: white; }
+    .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+    .nav-cta {
+      background: var(--red); color: white !important; padding: 8px 20px;
+      border-radius: 4px; font-weight: 600 !important; letter-spacing: 0.04em !important;
+      transition: background var(--transition) !important;
+    }
+    .nav-cta:hover { background: var(--red-soft) !important; }
+    .nav-cta::after { display: none !important; }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { width: 24px; height: 2px; background: white; border-radius: 2px; transition: var(--transition); }
+
+    /* ── PAGES ── */
+    .page { display: none; padding-top: 68px; min-height: 100vh; }
+    .page.active { display: block; animation: fadeUp 0.5s ease both; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── HOME ── */
+    .hero {
+      min-height: calc(100vh - 68px);
+      background: linear-gradient(150deg, var(--navy) 0%, var(--navy-mid) 55%, #1a3a6e 100%);
+      position: relative; overflow: hidden;
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center; gap: 4rem;
+      padding: 5rem 6rem;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -120px; right: -120px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(192,40,30,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, transparent, var(--red), transparent);
+    }
+    .hero-content { position: relative; z-index: 1; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--red-soft); font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow::before { content: ''; width: 24px; height: 2px; background: var(--red-soft); }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 4vw, 3.8rem);
+      font-weight: 300; line-height: 1.15;
+      color: white; margin-bottom: 1rem;
+    }
+    .hero h1 em { font-style: italic; color: rgba(255,255,255,0.75); }
+    .hero-sub {
+      color: rgba(255,255,255,0.65); font-size: 1rem; line-height: 1.7;
+      max-width: 440px; margin-bottom: 2.5rem;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--red); color: white;
+      padding: 14px 32px; border-radius: 4px; text-decoration: none;
+      font-size: 0.88rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+      transition: all var(--transition); border: none; cursor: pointer;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-primary:hover { background: var(--red-soft); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(192,40,30,0.35); }
+    .btn-secondary {
+      background: transparent; color: white;
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 14px 32px; border-radius: 4px; text-decoration: none;
+      font-size: 0.88rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+      transition: all var(--transition); cursor: pointer;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-secondary:hover { border-color: white; background: rgba(255,255,255,0.08); }
+
+    .hero-image-col {
+      position: relative; z-index: 1;
+      display: flex; flex-direction: column; gap: 1rem;
+    }
+    .hero-clinic-card {
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px; padding: 1.8rem 2rem;
+      backdrop-filter: blur(8px);
+    }
+    .hero-clinic-card h3 { font-family: var(--font-display); color: white; font-size: 1.3rem; margin-bottom: 0.5rem; }
+    .hero-clinic-card p { color: rgba(255,255,255,0.6); font-size: 0.88rem; line-height: 1.6; }
+    .contact-row {
+      display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;
+    }
+    .contact-chip {
+      display: flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
+      color: white; padding: 6px 14px; border-radius: 100px;
+      font-size: 0.8rem; text-decoration: none; transition: background var(--transition);
+    }
+    .contact-chip:hover { background: rgba(255,255,255,0.18); }
+    .contact-chip svg { width: 14px; height: 14px; flex-shrink: 0; }
+    .emergency-tag {
+      background: rgba(192,40,30,0.2); border: 1px solid rgba(192,40,30,0.4);
+      color: #ff8a7a; padding: 6px 14px; border-radius: 100px;
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em;
+    }
+
+    /* Stats bar */
+    .stats-bar {
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 2rem 6rem;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    .stat-item { text-align: center; }
+    .stat-num {
+      font-family: var(--font-display); font-size: 2.2rem; font-weight: 600;
+      color: var(--navy); display: block;
+    }
+    .stat-label { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 2px; }
+
+    /* Services preview */
+    .section { padding: 5rem 6rem; }
+    .section-header { margin-bottom: 3rem; }
+    .section-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--red); font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.8rem;
+    }
+    .section-eyebrow::before { content: ''; width: 20px; height: 2px; background: var(--red); }
+    .section-title {
+      font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 400; line-height: 1.2; color: var(--navy);
+    }
+    .section-title em { font-style: italic; color: var(--red); }
+    .section-sub { color: var(--muted); margin-top: 0.8rem; max-width: 560px; font-size: 0.95rem; }
+
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .service-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; padding: 2rem;
+      transition: all var(--transition); cursor: pointer;
+      position: relative; overflow: hidden;
+    }
+    .service-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--navy), var(--red));
+      transform: scaleX(0); transition: transform var(--transition);
+    }
+    .service-card:hover { border-color: var(--navy-mid); box-shadow: 0 12px 30px rgba(14,34,64,0.1); transform: translateY(-3px); }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon {
+      width: 48px; height: 48px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      display: flex; align-items: center; justify-content: center; margin-bottom: 1.2rem;
+      font-size: 1.4rem;
+    }
+    .service-card h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; color: var(--navy); margin-bottom: 0.6rem; }
+    .service-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
+
+    /* Blog preview */
+    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .blog-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; overflow: hidden;
+      transition: all var(--transition); cursor: pointer;
+    }
+    .blog-card:hover { box-shadow: 0 10px 28px rgba(14,34,64,0.1); transform: translateY(-3px); }
+    .blog-card-body { padding: 1.5rem; }
+    .blog-tag {
+      display: inline-block; background: rgba(14,34,64,0.06);
+      color: var(--navy-mid); padding: 3px 10px; border-radius: 3px;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+    .blog-card h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.6rem; line-height: 1.3; }
+    .blog-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+    .blog-meta { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--warm-gray); display: flex; justify-content: space-between; align-items: center; }
+    .blog-date { font-size: 0.75rem; color: var(--muted); }
+    .blog-read { font-size: 0.78rem; color: var(--red); font-weight: 600; text-decoration: none; }
+    .blog-img { height: 160px; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+
+    /* ── SERVICES PAGE ── */
+    .page-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      padding: 4rem 6rem 3rem;
+      position: relative;
+    }
+    .page-hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--red), transparent); }
+    .page-hero-eyebrow { color: var(--red-soft); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.6rem; }
+    .page-hero h1 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; color: white; }
+    .page-hero h1 em { font-style: italic; }
+    .page-hero p { color: rgba(255,255,255,0.6); margin-top: 0.8rem; max-width: 520px; font-size: 0.95rem; }
+
+    .services-full { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .service-full-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 12px; padding: 2.5rem;
+      transition: box-shadow var(--transition);
+    }
+    .service-full-card:hover { box-shadow: 0 12px 30px rgba(14,34,64,0.1); }
+    .service-full-card .sfc-header { display: flex; align-items: flex-start; gap: 1.2rem; margin-bottom: 1.5rem; }
+    .sfc-icon { width: 56px; height: 56px; border-radius: 12px; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); display: flex; align-items: center; justify-content: center; font-size: 1.6rem; flex-shrink: 0; }
+    .sfc-title h3 { font-family: var(--font-display); font-size: 1.35rem; font-weight: 600; color: var(--navy); }
+    .sfc-title p { font-size: 0.82rem; color: var(--muted); margin-top: 2px; }
+    .sfc-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .sfc-list li { display: flex; align-items: flex-start; gap: 8px; font-size: 0.88rem; color: var(--text); line-height: 1.5; }
+    .sfc-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--red); margin-top: 6px; flex-shrink: 0; }
+    .notice-box {
+      background: rgba(192,40,30,0.06); border: 1px solid rgba(192,40,30,0.18);
+      border-radius: 10px; padding: 1.5rem 2rem; margin: 2rem 0;
+      display: flex; align-items: flex-start; gap: 1rem;
+    }
+    .notice-box .notice-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+    .notice-box strong { color: var(--red); display: block; margin-bottom: 0.3rem; font-size: 0.9rem; }
+    .notice-box p { color: var(--text); font-size: 0.88rem; }
+
+    /* ── ABOUT PAGE ── */
+    .about-layout { display: grid; grid-template-columns: 360px 1fr; gap: 4rem; align-items: start; padding: 5rem 6rem; }
+    .about-sidebar { position: sticky; top: 90px; }
+    .about-photo-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 14px; overflow: hidden;
+    }
+    .about-photo-placeholder {
+      height: 280px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 50%, var(--red) 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 5rem;
+    }
+    .about-photo-info { padding: 1.5rem; }
+    .about-photo-info h3 { font-family: var(--font-display); font-size: 1.25rem; color: var(--navy); }
+    .about-photo-info .qual { font-size: 0.82rem; color: var(--muted); margin-top: 3px; }
+    .about-contact-list { list-style: none; margin-top: 1.2rem; display: flex; flex-direction: column; gap: 0.5rem; }
+    .about-contact-list li { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--text); }
+    .about-contact-list li svg { width: 15px; height: 15px; color: var(--red); flex-shrink: 0; }
+
+    .about-content h2 { font-family: var(--font-display); font-size: 2rem; font-weight: 400; color: var(--navy); margin-bottom: 1rem; }
+    .about-content h2 em { font-style: italic; }
+    .about-content p { color: var(--text); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1.2rem; }
+    .credentials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0; }
+    .cred-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; }
+    .cred-card .cred-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; }
+    .cred-card .cred-val { font-family: var(--font-display); font-size: 1rem; color: var(--navy); font-weight: 600; }
+    .cred-card .cred-sub { font-size: 0.8rem; color: var(--muted); margin-top: 2px; }
+
+    /* ── BLOG PAGE ── */
+    .blog-full-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .blog-full-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 12px; overflow: hidden;
+      transition: all var(--transition); cursor: pointer;
+    }
+    .blog-full-card:hover { box-shadow: 0 12px 30px rgba(14,34,64,0.1); transform: translateY(-3px); }
+    .bfc-img { height: 200px; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem; }
+    .bfc-body { padding: 2rem; }
+    .bfc-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1rem; }
+    .bfc-tag { display: inline-block; padding: 3px 10px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+    .bfc-tag.obs { background: rgba(14,34,64,0.08); color: var(--navy); }
+    .bfc-tag.gyn { background: rgba(192,40,30,0.08); color: var(--red); }
+    .bfc-tag.gen { background: rgba(0,100,0,0.08); color: #1a5c2a; }
+    .bfc-body h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: var(--navy); line-height: 1.3; margin-bottom: 0.8rem; }
+    .bfc-body p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; margin-bottom: 1rem; }
+    .bfc-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid var(--warm-gray); }
+    .bfc-date { font-size: 0.75rem; color: var(--muted); }
+    .bfc-read { font-size: 0.78rem; color: var(--red); font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 4px; }
+
+    /* Blog article modal */
+    .blog-modal {
+      position: fixed; inset: 0; z-index: 2000;
+      background: rgba(0,0,0,0.6); backdrop-filter: blur(6px);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none; transition: opacity 0.3s;
+    }
+    .blog-modal.open { opacity: 1; pointer-events: all; }
+    .blog-modal-inner {
+      background: var(--cream); max-width: 700px; width: 90%;
+      max-height: 85vh; border-radius: 14px; overflow-y: auto;
+      transform: translateY(30px); transition: transform 0.3s;
+    }
+    .blog-modal.open .blog-modal-inner { transform: translateY(0); }
+    .bm-header { padding: 2.5rem 2.5rem 1.5rem; border-bottom: 1px solid var(--border); }
+    .bm-header h2 { font-family: var(--font-display); font-size: 1.7rem; font-weight: 600; color: var(--navy); line-height: 1.3; }
+    .bm-body { padding: 2rem 2.5rem 2.5rem; }
+    .bm-body h4 { font-family: var(--font-display); font-size: 1.1rem; color: var(--navy); margin: 1.5rem 0 0.5rem; }
+    .bm-body p { font-size: 0.9rem; color: var(--text); line-height: 1.8; margin-bottom: 0.8rem; }
+    .bm-body ul { margin: 0.5rem 0 1rem 1.2rem; }
+    .bm-body ul li { font-size: 0.88rem; color: var(--text); line-height: 1.7; margin-bottom: 0.3rem; }
+    .bm-close { float: right; background: rgba(0,0,0,0.1); border: none; border-radius: 50%; width: 32px; height: 32px; cursor: pointer; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; transition: background var(--transition); }
+    .bm-close:hover { background: rgba(0,0,0,0.2); }
+    .bm-disclaimer { background: rgba(192,40,30,0.06); border: 1px solid rgba(192,40,30,0.2); border-radius: 8px; padding: 1rem 1.2rem; margin-top: 1.5rem; font-size: 0.8rem; color: var(--muted); }
+
+    /* ── CONTACT PAGE ── */
+    .contact-layout { display: grid; grid-template-columns: 1fr 400px; gap: 4rem; padding: 5rem 6rem; align-items: start; }
+    .contact-form-wrap { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 2.5rem; }
+    .contact-form-wrap h2 { font-family: var(--font-display); font-size: 1.8rem; font-weight: 400; color: var(--navy); margin-bottom: 0.5rem; }
+    .contact-form-wrap > p { color: var(--muted); font-size: 0.88rem; margin-bottom: 2rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label { display: block; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy); margin-bottom: 0.5rem; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 11px 14px;
+      border: 1.5px solid var(--border); border-radius: 6px;
+      font-family: var(--font-body); font-size: 0.9rem; color: var(--text);
+      background: var(--cream); transition: border-color var(--transition);
+      outline: none;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--navy-mid); background: white; }
+    .form-group textarea { height: 120px; resize: vertical; }
+    .form-submit { width: 100%; padding: 14px; background: var(--navy); color: white; border: none; border-radius: 6px; font-family: var(--font-body); font-size: 0.9rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: all var(--transition); }
+    .form-submit:hover { background: var(--navy-mid); transform: translateY(-1px); }
+    .form-success { display: none; text-align: center; padding: 2rem; }
+    .form-success .fs-icon { font-size: 3rem; margin-bottom: 1rem; }
+    .form-success h3 { font-family: var(--font-display); font-size: 1.4rem; color: var(--navy); margin-bottom: 0.5rem; }
+    .form-success p { color: var(--muted); font-size: 0.88rem; }
+
+    .contact-info-cards { display: flex; flex-direction: column; gap: 1rem; }
+    .cic { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+    .cic-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.8rem; }
+    .cic-val { font-size: 0.95rem; color: var(--text); line-height: 1.7; }
+    .cic-val a { color: var(--navy); text-decoration: none; font-weight: 500; }
+    .cic-val a:hover { color: var(--red); }
+    .emergency-card { background: linear-gradient(135deg, var(--red) 0%, #8b0000 100%); border-radius: 12px; padding: 1.5rem; }
+    .emergency-card .ec-label { color: rgba(255,255,255,0.7); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .emergency-card .ec-num { color: white; font-family: var(--font-display); font-size: 1.8rem; font-weight: 600; }
+    .emergency-card .ec-sub { color: rgba(255,255,255,0.7); font-size: 0.8rem; margin-top: 4px; }
+    .whatsapp-btn { display: flex; align-items: center; gap: 10px; background: #25d366; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-size: 0.88rem; font-weight: 600; margin-top: 1rem; transition: background var(--transition); }
+    .whatsapp-btn:hover { background: #1da851; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy); color: rgba(255,255,255,0.6);
+      padding: 3rem 6rem 2rem;
+    }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 2rem; }
+    .footer-brand h3 { font-family: var(--font-display); color: white; font-size: 1.2rem; margin-bottom: 0.5rem; }
+    .footer-brand p { font-size: 0.82rem; line-height: 1.7; max-width: 280px; }
+    .footer-col h4 { color: white; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-col ul li a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.85rem; transition: color var(--transition); cursor: pointer; }
+    .footer-col ul li a:hover { color: white; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: gap; }
+    .footer-bottom p { font-size: 0.78rem; }
+    .footer-bottom .disclaimer { font-size: 0.72rem; color: rgba(255,255,255,0.35); max-width: 400px; text-align: right; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .hero { padding: 3rem 3rem; gap: 2rem; }
+      .section { padding: 4rem 3rem; }
+      .stats-bar { padding: 2rem 3rem; }
+      .about-layout { padding: 4rem 3rem; grid-template-columns: 1fr; }
+      .about-sidebar { position: static; }
+      .contact-layout { padding: 4rem 3rem; grid-template-columns: 1fr; }
+      .page-hero { padding: 3rem 3rem 2.5rem; }
+      footer { padding: 3rem 3rem 2rem; }
+    }
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
+      .hero-image-col { display: none; }
+      .stats-bar { grid-template-columns: 2fr 2fr; padding: 1.5rem; }
+      .section { padding: 3rem 1.5rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .services-full { grid-template-columns: 1fr; }
+      .about-layout { padding: 3rem 1.5rem; }
+      .contact-layout { padding: 3rem 1.5rem; grid-template-columns: 1fr; }
+      .page-hero { padding: 2.5rem 1.5rem 2rem; }
+      footer { padding: 2.5rem 1.5rem 1.5rem; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .credentials-grid { grid-template-columns: 1fr; }
+      .blog-full-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; background: rgba(14,34,64,0.98); padding: 1.5rem; gap: 1rem; }
+    }
+
+    /* Utility */
+    .text-center { text-align: center; }
+    .mt-2 { margin-top: 2rem; }
+    .divider { height: 1px; background: var(--border); margin: 0 6rem; }
+    @media(max-width:768px){ .divider { margin: 0 1.5rem; } }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a class="nav-logo" href="#" onclick="showPage('home')">
+    <div class="nav-logo-mark">M</div>
+    <div class="nav-logo-text">
+      <strong>Dr. S.W. Madombi</strong>
+      <span>Obs &amp; Gyn · Harare</span>
+    </div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#" onclick="showPage('home')" data-page="home">Home</a></li>
+    <li><a href="#" onclick="showPage('services')" data-page="services">Services</a></li>
+    <li><a href="#" onclick="showPage('about')" data-page="about">About</a></li>
+    <li><a href="#" onclick="showPage('blog')" data-page="blog">Patient Info</a></li>
+    <li><a href="#" onclick="showPage('contact')" class="nav-cta" data-page="contact">Book Inquiry</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════ HOME PAGE -->
+<div id="page-home" class="page active">
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Specialist Care · Harare, Zimbabwe</div>
+      <h1>Expert <em>Obstetric &amp;<br>Gynaecological</em><br>Care</h1>
+      <p class="hero-sub">Comprehensive women's health services delivered by a specialist with formal postgraduate training in Obstetrics and Gynaecology from the University of Zimbabwe.</p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="showPage('contact')">Book an Inquiry ↗</button>
+        <button class="btn-secondary" onclick="showPage('services')">Our Services</button>
+      </div>
+    </div>
+    <div class="hero-image-col">
+      <div class="hero-clinic-card">
+        <h3>Central Medical Rooms</h3>
+        <p>68 Central Avenue, Harare<br>(Corner 7th Avenue &amp; Central Avenue)</p>
+        <div class="contact-row">
+          <span class="emergency-tag">🚨 Emergency: 0713 309 093</span>
+        </div>
+        <div class="contact-row" style="margin-top:0.6rem">
+          <a href="tel:0864427855" class="contact-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            08644 278 554
+          </a>
+          <a href="https://wa.me/263786250846" class="contact-chip" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats-bar">
+    <div class="stat-item"><span class="stat-num">Obs &amp; Gyn</span><span class="stat-label">Specialist Qualification</span></div>
+    <div class="stat-item"><span class="stat-num">MBChB</span><span class="stat-label">University of Zimbabwe</span></div>
+    <div class="stat-item"><span class="stat-num">Mmed</span><span class="stat-label">Postgraduate Degree</span></div>
+    <div class="stat-item"><span class="stat-num">Harare</span><span class="stat-label">Central Avenue Clinic</span></div>
+  </div>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">What We Offer</div>
+      <h2 class="section-title">Specialist <em>Services</em></h2>
+      <p class="section-sub">From antenatal care to complex gynaecological conditions — specialist-led management at every stage.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card" onclick="showPage('services')">
+        <div class="service-icon">🤱</div>
+        <h3>Antenatal Care</h3>
+        <p>Comprehensive pregnancy monitoring including ultrasound, blood tests, glucose screening and foetal growth assessment.</p>
+      </div>
+      <div class="service-card" onclick="showPage('services')">
+        <div class="service-icon">🔬</div>
+        <h3>Gynaecological Services</h3>
+        <p>Management of PCOS, fibroids, endometriosis, cervical screening, contraception counselling and more.</p>
+      </div>
+      <div class="service-card" onclick="showPage('services')">
+        <div class="service-icon">📡</div>
+        <h3>Ultrasound Imaging</h3>
+        <p>In-room diagnostic ultrasound for pregnancy and gynaecological assessment using modern equipment.</p>
+      </div>
+      <div class="service-card" onclick="showPage('services')">
+        <div class="service-icon">💊</div>
+        <h3>Contraception</h3>
+        <p>Personalised contraception counselling — implants, IUDs, injectables, oral contraceptives and emergency contraception.</p>
+      </div>
+      <div class="service-card" onclick="showPage('services')">
+        <div class="service-icon">👶</div>
+        <h3>Labour &amp; Delivery</h3>
+        <p>Specialist oversight of normal and complicated deliveries including caesarean section and assisted delivery.</p>
+      </div>
+      <div class="service-card" onclick="showPage('services')">
+        <div class="service-icon">🩺</div>
+        <h3>Fertility Assessment</h3>
+        <p>Initial investigation of subfertility, ovulation monitoring, hormonal assessment and referral pathways.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">Patient Education</div>
+      <h2 class="section-title">Latest from the <em>Clinic</em></h2>
+      <p class="section-sub">Evidence-based information to help patients make informed decisions about their health.</p>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card" onclick="openBlog(0)">
+        <div class="blog-img">🤰</div>
+        <div class="blog-card-body">
+          <span class="blog-tag">Obstetrics</span>
+          <h3>Important Pregnancy Tests Every Woman Should Know</h3>
+          <p>Ultrasound, blood tests, glucose screening and more — why these checks matter even when you feel healthy.</p>
+          <div class="blog-meta"><span class="blog-date">March 2025</span><a class="blog-read">Read →</a></div>
+        </div>
+      </div>
+      <div class="blog-card" onclick="openBlog(1)">
+        <div class="blog-img">🌿</div>
+        <div class="blog-card-body">
+          <span class="blog-tag">Gynaecology</span>
+          <h3>Is It PCOS? 10 Signs You Should Not Ignore</h3>
+          <p>Polycystic Ovary Syndrome affects 1 in 10 women. Learn the signs, how it is diagnosed and what treatment looks like.</p>
+          <div class="blog-meta"><span class="blog-date">February 2025</span><a class="blog-read">Read →</a></div>
+        </div>
+      </div>
+      <div class="blog-card" onclick="openBlog(2)">
+        <div class="blog-img">😴</div>
+        <div class="blog-card-body">
+          <span class="blog-tag">Pregnancy Tips</span>
+          <h3>Why Sleep Is So Hard During Pregnancy</h3>
+          <p>Back pain, leg cramps, frequent urination — and what you can do to actually get some rest.</p>
+          <div class="blog-meta"><span class="blog-date">January 2025</span><a class="blog-read">Read →</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-2">
+      <button class="btn-secondary" onclick="showPage('blog')" style="color:var(--navy);border-color:var(--border)">View All Articles →</button>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--navy);margin:0;padding:4rem 6rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:2rem;">
+    <div>
+      <h2 style="font-family:var(--font-display);color:white;font-size:2rem;font-weight:300;">Ready to book a consultation?</h2>
+      <p style="color:rgba(255,255,255,0.6);margin-top:0.5rem;font-size:0.95rem;">Send an inquiry and we will get back to you promptly.</p>
+    </div>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+      <button class="btn-primary" onclick="showPage('contact')">Send an Inquiry →</button>
+      <a href="https://wa.me/263786250846" target="_blank" class="btn-secondary">WhatsApp Us</a>
+    </div>
+  </section>
+
+</div>
+
+<!-- ═══════════════════════════════════════════ SERVICES PAGE -->
+<div id="page-services" class="page">
+
+  <div class="page-hero">
+    <div class="page-hero-eyebrow">Clinical Services</div>
+    <h1>Obstetrics &amp; <em>Gynaecology</em></h1>
+    <p>Specialist-led care covering all aspects of women's reproductive health — from conception to delivery and beyond.</p>
+  </div>
+
+  <section class="section">
+    <div class="notice-box">
+      <div class="notice-icon">🚨</div>
+      <div>
+        <strong>Emergency Contact: 0713 309 093</strong>
+        <p>For obstetric emergencies, sudden heavy bleeding, severe abdominal pain or any urgent concern, call the emergency line immediately or proceed to the nearest emergency department.</p>
+      </div>
+    </div>
+
+    <div class="services-full">
+
+      <div class="service-full-card">
+        <div class="sfc-header">
+          <div class="sfc-icon">🤱</div>
+          <div class="sfc-title">
+            <h3>Antenatal Care</h3>
+            <p>Comprehensive pregnancy monitoring</p>
+          </div>
+        </div>
+        <ul class="sfc-list">
+          <li>Booking visit and initial pregnancy assessment</li>
+          <li>Serial ultrasound scans (dating, anomaly, growth)</li>
+          <li>Full blood count and blood group testing</li>
+          <li>Glucose tolerance testing (GDM screening)</li>
+          <li>Blood pressure monitoring and pre-eclampsia screening</li>
+          <li>Foetal wellbeing assessment and biophysical profile</li>
+          <li>Anaemia management and iron supplementation guidance</li>
+          <li>Birth planning and delivery preparation counselling</li>
+        </ul>
+      </div>
+
+      <div class="service-full-card">
+        <div class="sfc-header">
+          <div class="sfc-icon">👶</div>
+          <div class="sfc-title">
+            <h3>Labour &amp; Delivery</h3>
+            <p>Normal and complicated deliveries</p>
+          </div>
+        </div>
+        <ul class="sfc-list">
+          <li>Normal vaginal delivery with specialist oversight</li>
+          <li>Elective and emergency caesarean section</li>
+          <li>Assisted delivery (vacuum and forceps)</li>
+          <li>Management of breech presentations</li>
+          <li>Management of prolonged or obstructed labour</li>
+          <li>Post-partum haemorrhage prevention and management</li>
+          <li>Perineal repair and post-delivery care</li>
+          <li>Neonatal resuscitation support</li>
+        </ul>
+      </div>
+
+      <div class="service-full-card">
+        <div class="sfc-header">
+          <div class="sfc-icon">🔬</div>
+          <div class="sfc-title">
+            <h3>General Gynaecology</h3>
+            <p>Investigative and medical management</p>
+          </div>
+        </div>
+        <ul class="sfc-list">
+          <li>Polycystic Ovary Syndrome (PCOS) diagnosis and management</li>
+          <li>Uterine fibroid assessment and management</li>
+          <li>Endometriosis evaluation</li>
+          <li>Abnormal uterine bleeding investigation</li>
+          <li>Cervical screening (Pap smear)</li>
+          <li>Ovarian cyst assessment</li>
+          <li>Pelvic pain evaluation</li>
+          <li>Vulval and vaginal conditions</li>
+        </ul>
+      </div>
+
+      <div class="service-full-card">
+        <div class="sfc-header">
+          <div class="sfc-icon">📡</div>
+          <div class="sfc-title">
+            <h3>Ultrasound Imaging</h3>
+            <p>In-room diagnostic imaging</p>
+          </div>
+        </div>
+        <ul class="sfc-list">
+          <li>Early pregnancy (viability) scan</li>
+          <li>First trimester nuchal translucency scan</li>
+          <li>Second trimester anomaly scan (20-week scan)</li>
+          <li>Growth and wellbeing scans (third trimester)</li>
+          <li>Pelvic ultrasound for gynaecological conditions</li>
+          <li>Transvaginal ultrasound</li>
+          <li>Doppler studies (umbilical and uterine artery)</li>
+        </ul>
+      </div>
+
+      <div class="service-full-card">
+        <div class="sfc-header">
+          <div class="sfc-icon">💊</div>
+          <div class="sfc-title">
+            <h3>Contraception</h3>
+            <p>Personalised family planning</p>
+          </div>
+        </div>
+        <ul class="sfc-list">
+          <li>Combined oral contraceptive counselling and prescription</li>
+          <li>Progestogen-only pill</li>
+          <li>Injectable contraceptives (Depo-Provera)</li>
+          <li>Subdermal implant insertion and removal</li>
+          <li>Intrauterine device (IUD / coil) insertion and removal</li>
+          <li>Emergency contraception</li>
+          <li>Post-partum contraception planning</li>
+        </ul>
+      </div>
+
+      <div class="service-full-card">
+        <div class="sfc-header">
+          <div class="sfc-icon">🩺</div>
+          <div class="sfc-title">
+            <h3>Fertility Assessment</h3>
+            <p>Initial subfertility investigation</p>
+          </div>
+        </div>
+        <ul class="sfc-list">
+          <li>Ovulation confirmation and cycle monitoring</li>
+          <li>Hormonal profile (FSH, LH, AMH, thyroid)</li>
+          <li>Pelvic ultrasound for follicle tracking</li>
+          <li>Hysterosalpingography (tubal patency) assessment</li>
+          <li>Semen analysis coordination</li>
+          <li>Referral to assisted reproduction when indicated</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════ ABOUT PAGE -->
+<div id="page-about" class="page">
+
+  <div class="page-hero">
+    <div class="page-hero-eyebrow">The Doctor</div>
+    <h1>Dr. S.W. <em>Madombi</em></h1>
+    <p>Specialist Obstetrician and Gynaecologist, formally trained at the University of Zimbabwe.</p>
+  </div>
+
+  <div class="about-layout">
+
+    <div class="about-sidebar">
+      <div class="about-photo-card">
+        <div class="about-photo-placeholder">🩺</div>
+        <div class="about-photo-info">
+          <h3>Dr. S.W. Madombi</h3>
+          <div class="qual">MBChB(UZ) &nbsp;·&nbsp; Mmed Obs &amp; Gyn(UZ)</div>
+          <ul class="about-contact-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              68 Central Avenue, Harare
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              08644 278 554 / 0714 197 239
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              drswmadombirooms@gmail.com
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-content">
+      <h2>Specialist <em>Women's Health</em> Care in Harare</h2>
+      <p>Dr. S.W. Madombi is a fully qualified Obstetrician and Gynaecologist holding both a primary medical degree (MBChB) and a postgraduate Masters in Medicine in Obstetrics and Gynaecology, both obtained from the University of Zimbabwe.</p>
+      <p>Practising from Central Medical Rooms at 68 Central Avenue, Harare, Dr. Madombi provides comprehensive specialist care covering the full spectrum of women's reproductive health — from pre-conception counselling and antenatal care through to delivery, post-natal care, and the management of complex gynaecological conditions.</p>
+      <p>The practice is equipped with an in-room ultrasound machine, enabling diagnostic imaging at the point of care. This allows timely assessment of both obstetric and gynaecological conditions without the need for external referral for most routine imaging.</p>
+
+      <div class="credentials-grid">
+        <div class="cred-card">
+          <div class="cred-label">Primary Degree</div>
+          <div class="cred-val">MBChB (UZ)</div>
+          <div class="cred-sub">University of Zimbabwe</div>
+        </div>
+        <div class="cred-card">
+          <div class="cred-label">Postgraduate</div>
+          <div class="cred-val">Mmed Obs &amp; Gyn</div>
+          <div class="cred-sub">University of Zimbabwe</div>
+        </div>
+        <div class="cred-card">
+          <div class="cred-label">Specialty</div>
+          <div class="cred-val">Obstetrics &amp; Gynaecology</div>
+          <div class="cred-sub">Full specialist scope</div>
+        </div>
+        <div class="cred-card">
+          <div class="cred-label">Location</div>
+          <div class="cred-val">Harare, Zimbabwe</div>
+          <div class="cred-sub">Central Medical Rooms, Cnr 7th &amp; Central</div>
+        </div>
+      </div>
+
+      <h2 style="margin-top:2rem;">Our <em>Approach</em></h2>
+      <p>Every patient is seen as an individual. Consultations are unhurried, questions are encouraged, and clinical decisions are explained clearly. The aim is to ensure patients leave with a sound understanding of their condition and the reasoning behind any management plan.</p>
+      <p>For obstetric patients, continuity of care is emphasised — ideally the same specialist throughout the pregnancy journey. For gynaecological patients, the goal is accurate diagnosis and evidence-based management, with referral to appropriate sub-specialists when the clinical picture demands it.</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ BLOG / PATIENT INFO PAGE -->
+<div id="page-blog" class="page">
+
+  <div class="page-hero">
+    <div class="page-hero-eyebrow">Patient Education</div>
+    <h1>Health <em>Information</em></h1>
+    <p>Reliable, specialist-reviewed articles to help you understand your health and make informed decisions.</p>
+  </div>
+
+  <section class="section">
+    <div class="blog-full-grid">
+
+      <div class="blog-full-card" onclick="openBlog(0)">
+        <div class="bfc-img">🤰</div>
+        <div class="bfc-body">
+          <div class="bfc-tags"><span class="bfc-tag obs">Obstetrics</span><span class="bfc-tag gen">Antenatal</span></div>
+          <h3>Important Pregnancy Tests Every Woman Should Know</h3>
+          <p>Ultrasound screenings, blood tests, urine checks, baby growth monitoring, glucose screening and blood pressure — why these checks matter even if you feel perfectly healthy.</p>
+          <div class="bfc-footer">
+            <span class="bfc-date">March 2025 · 4 min read</span>
+            <span class="bfc-read">Read Article →</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-full-card" onclick="openBlog(1)">
+        <div class="bfc-img">🌿</div>
+        <div class="bfc-body">
+          <div class="bfc-tags"><span class="bfc-tag gyn">Gynaecology</span><span class="bfc-tag gen">PCOS</span></div>
+          <h3>Is It PCOS? 10 Signs You Should Not Ignore</h3>
+          <p>Polycystic Ovary Syndrome is one of the most common hormonal conditions in women of reproductive age. Recognising the signs early leads to far better outcomes.</p>
+          <div class="bfc-footer">
+            <span class="bfc-date">February 2025 · 5 min read</span>
+            <span class="bfc-read">Read Article →</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-full-card" onclick="openBlog(2)">
+        <div class="bfc-img">😴</div>
+        <div class="bfc-body">
+          <div class="bfc-tags"><span class="bfc-tag obs">Pregnancy Tips</span></div>
+          <h3>Why Sleep Is So Hard During Pregnancy — And What Helps</h3>
+          <p>Back pain at midnight, leg cramps at 2am, overheating by 4am. Sleep disruption during pregnancy is real — and there are strategies that actually work.</p>
+          <div class="bfc-footer">
+            <span class="bfc-date">January 2025 · 4 min read</span>
+            <span class="bfc-read">Read Article →</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-full-card" onclick="openBlog(3)">
+        <div class="bfc-img">💊</div>
+        <div class="bfc-body">
+          <div class="bfc-tags"><span class="bfc-tag gyn">Contraception</span></div>
+          <h3>Choosing a Contraceptive Method: What Are Your Options?</h3>
+          <p>From daily pills to long-acting implants and IUDs — a practical guide to the available methods, how they work, and how to choose what is right for you.</p>
+          <div class="bfc-footer">
+            <span class="bfc-date">December 2024 · 6 min read</span>
+            <span class="bfc-read">Read Article →</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-full-card" onclick="openBlog(4)">
+        <div class="bfc-img">👶</div>
+        <div class="bfc-body">
+          <div class="bfc-tags"><span class="bfc-tag obs">Labour</span></div>
+          <h3>Understanding the Stages of Labour and Delivery</h3>
+          <p>What actually happens during labour? The three stages of labour explained — engagement, descent, rotation, extension and delivery — in plain language.</p>
+          <div class="bfc-footer">
+            <span class="bfc-date">November 2024 · 5 min read</span>
+            <span class="bfc-read">Read Article →</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-full-card" onclick="openBlog(5)">
+        <div class="bfc-img">🩺</div>
+        <div class="bfc-body">
+          <div class="bfc-tags"><span class="bfc-tag gen">General Health</span></div>
+          <h3>When Should You See a Gynaecologist? 8 Reasons Not to Wait</h3>
+          <p>Many women delay gynaecological care until a problem becomes serious. Here are eight situations where an early consultation makes a significant difference.</p>
+          <div class="bfc-footer">
+            <span class="bfc-date">October 2024 · 4 min read</span>
+            <span class="bfc-read">Read Article →</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<!-- ═══════════════════════════════════════════ CONTACT PAGE -->
+<div id="page-contact" class="page">
+
+  <div class="page-hero">
+    <div class="page-hero-eyebrow">Get in Touch</div>
+    <h1>Book a <em>Consultation</em></h1>
+    <p>Send us an inquiry and the clinic will respond within one business day. For emergencies, call directly.</p>
+  </div>
+
+  <div class="contact-layout">
+
+    <div class="contact-form-wrap">
+      <h2>Send an Inquiry</h2>
+      <p>Fill in the form below and someone from the clinic will be in touch. All information is kept strictly confidential.</p>
+
+      <!--
+        FORMSPREE SETUP (FREE):
+        1. Go to https://formspree.io and create a free account
+        2. Create a new form — you will get a form endpoint like https://formspree.io/f/YOUR_ID
+        3. Replace "YOUR_FORMSPREE_ID" in the action attribute below
+        The free plan allows 50 submissions/month. No backend required.
+      -->
+      <form id="inquiryForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" onsubmit="handleSubmit(event)">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">First Name *</label>
+            <input type="text" id="fname" name="first_name" required placeholder="Jane" />
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name *</label>
+            <input type="text" id="lname" name="last_name" required placeholder="Doe" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="07XX XXX XXX" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="optional" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="reason">Reason for Visit *</label>
+          <select id="reason" name="reason" required>
+            <option value="">— Please select —</option>
+            <option value="antenatal">Antenatal / Pregnancy Care</option>
+            <option value="ultrasound">Ultrasound Scan</option>
+            <option value="gynaecology">Gynaecological Concern</option>
+            <option value="contraception">Contraception Advice</option>
+            <option value="fertility">Fertility Assessment</option>
+            <option value="pcos">PCOS / Hormonal Issues</option>
+            <option value="general">General Enquiry</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="preferred_time">Preferred Contact Time</label>
+          <select id="preferred_time" name="preferred_contact_time">
+            <option value="">— No preference —</option>
+            <option value="morning">Morning (8am – 12pm)</option>
+            <option value="afternoon">Afternoon (12pm – 4pm)</option>
+            <option value="evening">Late afternoon (4pm – 6pm)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message / Additional Information</label>
+          <textarea id="message" name="message" placeholder="Briefly describe your concern or any additional details that may help the clinic prepare for your visit..."></textarea>
+        </div>
+
+        <input type="hidden" name="_subject" value="New Inquiry - Dr Madombi Website" />
+        <input type="text" name="_gotcha" style="display:none" />
+
+        <button type="submit" class="form-submit">Submit Inquiry →</button>
+      </form>
+
+      <div class="form-success" id="formSuccess">
+        <div class="fs-icon">✅</div>
+        <h3>Inquiry Received</h3>
+        <p>Thank you. The clinic will be in touch within one business day. For urgent matters, please call directly on <strong>0713 309 093</strong>.</p>
+      </div>
+    </div>
+
+    <div class="contact-info-cards">
+
+      <div class="emergency-card">
+        <div class="ec-label">🚨 Emergency Line</div>
+        <div class="ec-num">0713 309 093</div>
+        <div class="ec-sub">For urgent obstetric &amp; gynaecological emergencies</div>
+      </div>
+
+      <div class="cic">
+        <div class="cic-title">Clinic Address</div>
+        <div class="cic-val">
+          68 Central Avenue, Harare<br>
+          (Corner 7th Avenue &amp; Central Avenue)<br>
+          Central Medical Rooms
+        </div>
+      </div>
+
+      <div class="cic">
+        <div class="cic-title">Phone Numbers</div>
+        <div class="cic-val">
+          <a href="tel:0864427855">08644 278 554</a><br>
+          <a href="tel:0714197239">0714 197 239</a>
+        </div>
+      </div>
+
+      <div class="cic">
+        <div class="cic-title">Email</div>
+        <div class="cic-val">
+          <a href="mailto:drswmadombirooms@gmail.com">drswmadombirooms@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="cic">
+        <a href="https://wa.me/263786250846" target="_blank" class="whatsapp-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          WhatsApp: 0786 250 846
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <h3>Dr. S.W. Madombi</h3>
+      <p>Specialist Obstetrician &amp; Gynaecologist<br>MBChB(UZ) · Mmed Obs &amp; Gyn(UZ)<br>Central Medical Rooms, 68 Central Avenue, Harare</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a onclick="showPage('services')">Antenatal Care</a></li>
+        <li><a onclick="showPage('services')">Gynaecology</a></li>
+        <li><a onclick="showPage('services')">Ultrasound</a></li>
+        <li><a onclick="showPage('services')">Contraception</a></li>
+        <li><a onclick="showPage('services')">Fertility Assessment</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a onclick="showPage('home')">Home</a></li>
+        <li><a onclick="showPage('about')">About Dr. Madombi</a></li>
+        <li><a onclick="showPage('blog')">Patient Information</a></li>
+        <li><a onclick="showPage('contact')">Contact &amp; Inquiry</a></li>
+        <li><a href="tel:0713309093">Emergency: 0713 309 093</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Dr. S.W. Madombi · Central Medical Rooms, Harare · All rights reserved</p>
+    <p class="disclaimer">This website is for informational purposes only and does not constitute medical advice. Always consult your doctor for medical decisions.</p>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════ BLOG MODAL -->
+<div class="blog-modal" id="blogModal" onclick="closeBlogIfOutside(event)">
+  <div class="blog-modal-inner" id="blogModalContent"></div>
+</div>
+
+<script>
+// ── PAGE ROUTING ──
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const target = document.getElementById('page-' + id);
+  if (target) { target.classList.add('active'); window.scrollTo({top:0, behavior:'smooth'}); }
+  document.querySelectorAll('[data-page]').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('data-page') === id);
+  });
+  if (window.innerWidth <= 768) { document.getElementById('navLinks').classList.remove('open'); }
+  return false;
+}
+
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+// ── FORM HANDLING ──
+function handleSubmit(e) {
+  const form = document.getElementById('inquiryForm');
+  const action = form.getAttribute('action');
+
+  // If Formspree not yet configured, show success anyway for demo
+  if (action.includes('YOUR_FORMSPREE_ID')) {
+    e.preventDefault();
+    form.style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+    return;
+  }
+
+  e.preventDefault();
+  fetch(action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  }).then(r => {
+    if (r.ok) {
+      form.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    } else {
+      alert('There was an issue submitting. Please call us directly on 08644 278 554.');
+    }
+  }).catch(() => {
+    alert('There was an issue submitting. Please call us directly on 08644 278 554.');
+  });
+}
+
+// ── BLOG DATA ──
+const blogs = [
+  {
+    title: "Important Pregnancy Tests Every Woman Should Know",
+    tag: "Obstetrics",
+    date: "March 2025",
+    body: `
+      <p>Antenatal testing is not optional. Many serious pregnancy complications — gestational diabetes, pre-eclampsia, foetal growth restriction — have no obvious symptoms until they become dangerous. Routine checks exist precisely to catch these conditions early.</p>
+
+      <h4>Ultrasound Screenings</h4>
+      <p>Most women require at least three key scans: an early dating scan to confirm gestational age and viability, an anomaly scan at around 20 weeks to check the baby's anatomy, and growth scans in the third trimester to ensure the baby is developing appropriately.</p>
+
+      <h4>Blood Tests</h4>
+      <p>A full blood count checks for anaemia, which is common in pregnancy and can affect both mother and baby. Blood group and antibody testing is important, particularly if you are rhesus negative. Additional tests screen for HIV, syphilis, rubella immunity and hepatitis B.</p>
+
+      <h4>Urine Tests</h4>
+      <p>Routine urine testing at each antenatal visit checks for protein (which may signal pre-eclampsia), glucose (which may indicate gestational diabetes), and urinary tract infections, which are more common in pregnancy and carry risks if untreated.</p>
+
+      <h4>Glucose Screening</h4>
+      <p>Gestational diabetes affects a significant proportion of pregnancies and increases risks for both mother and baby. The glucose tolerance test (GTT) is typically performed between 24 and 28 weeks.</p>
+
+      <h4>Blood Pressure Monitoring</h4>
+      <p>Pre-eclampsia is a potentially life-threatening condition characterised by high blood pressure and protein in the urine. It can develop rapidly and requires close monitoring throughout pregnancy.</p>
+
+      <div class="bm-disclaimer">This article is for general information only. Please attend all scheduled antenatal appointments and discuss any concerns with your doctor.</div>
+    `
+  },
+  {
+    title: "Is It PCOS? 10 Signs You Should Not Ignore",
+    tag: "Gynaecology",
+    date: "February 2025",
+    body: `
+      <p>Polycystic Ovary Syndrome (PCOS) affects approximately 1 in 10 women of reproductive age, making it one of the most common hormonal disorders. Despite this, it is frequently undiagnosed for years because its symptoms overlap with many other conditions.</p>
+
+      <h4>The 10 Key Signs</h4>
+      <ul>
+        <li><strong>Irregular or missed periods</strong> — cycles that are unpredictable, very long, or absent</li>
+        <li><strong>Excess facial or body hair (hirsutism)</strong> — driven by elevated androgens</li>
+        <li><strong>Persistent acne or oily skin</strong> — often hormonal and resistant to standard treatments</li>
+        <li><strong>Weight gain or difficulty losing weight</strong> — especially around the abdomen</li>
+        <li><strong>Thinning hair on the scalp</strong> — female pattern hair loss</li>
+        <li><strong>Dark skin patches</strong> — particularly on the neck, armpits or groin (acanthosis nigricans)</li>
+        <li><strong>Fatigue or low energy</strong> — often related to insulin resistance</li>
+        <li><strong>Mood swings, anxiety or depression</strong> — hormonal fluctuations affect mental health</li>
+        <li><strong>Sugar cravings and energy crashes</strong> — signs of underlying insulin resistance</li>
+        <li><strong>Difficulty conceiving</strong> — PCOS is one of the leading causes of anovulatory infertility</li>
+      </ul>
+
+      <h4>How Is PCOS Diagnosed?</h4>
+      <p>Diagnosis requires meeting at least two of three criteria: irregular ovulation, clinical or biochemical signs of elevated androgens, and polycystic ovaries on ultrasound. Blood tests and a pelvic ultrasound are the main investigations.</p>
+
+      <h4>Treatment Options</h4>
+      <p>Management is tailored to the individual's main concern — whether that is cycle regulation, acne, hair growth, weight management, or fertility. Lifestyle modification, hormonal contraception, metformin and ovulation induction agents are all used depending on the situation.</p>
+
+      <div class="bm-disclaimer">PCOS can only be properly diagnosed by a doctor. If you recognise several of these signs, please make an appointment for a formal assessment.</div>
+    `
+  },
+  {
+    title: "Why Sleep Is So Hard During Pregnancy — And What Helps",
+    tag: "Pregnancy Tips",
+    date: "January 2025",
+    body: `
+      <p>Sleep disruption during pregnancy is almost universal. What changes as the pregnancy progresses — and what can actually help?</p>
+
+      <h4>Midnight: Back Pain</h4>
+      <p>The growing uterus shifts your centre of gravity, increasing the lumbar curve and placing stress on the lower back. Sleeping on your side with a pillow between your knees reduces the strain. A pregnancy pillow (full-body or wedge) can make a significant difference from the second trimester onwards.</p>
+
+      <h4>2am: Leg Cramps</h4>
+      <p>Leg cramps are common, particularly in the third trimester. Causes include dehydration, low magnesium, and pressure on the sciatic nerve. Staying well hydrated, gentle calf stretching before bed, and ensuring adequate magnesium intake (discuss with your doctor before supplementing) can help reduce frequency.</p>
+
+      <h4>4am: Overheating</h4>
+      <p>Pregnancy increases your metabolic rate and core body temperature. This makes staying cool at night difficult. Lightweight breathable bedding, a fan, and sleeping in a cooler room all help. Avoid heavy meals close to bedtime, which further raise body temperature.</p>
+
+      <h4>Other Common Disruptors</h4>
+      <ul>
+        <li>Frequent urination — reduce fluids from 2 hours before bed, though total daily intake should remain high</li>
+        <li>Heartburn — elevate the head of the bed slightly and avoid spicy or fatty foods at dinner</li>
+        <li>Foetal movement — often most active at night; unfortunately there is no fix, though it does ease post-delivery</li>
+        <li>Anxiety — normal in pregnancy; if significant, speak to your doctor</li>
+      </ul>
+
+      <div class="bm-disclaimer">If sleep disruption is severe or you experience symptoms like shortness of breath, chest pain, or severe swelling, speak to your doctor promptly.</div>
+    `
+  },
+  {
+    title: "Choosing a Contraceptive Method: What Are Your Options?",
+    tag: "Contraception",
+    date: "December 2024",
+    body: `
+      <p>Choosing a contraceptive method is a personal decision that depends on your health history, relationship status, plans for future pregnancy, and tolerance of side effects. There is no single best method — only what works best for you.</p>
+
+      <h4>Short-Acting Methods (Daily / Monthly)</h4>
+      <ul>
+        <li><strong>Combined oral contraceptive pill</strong> — highly effective when taken correctly; also useful for managing heavy periods, acne and PCOS</li>
+        <li><strong>Progestogen-only pill (mini-pill)</strong> — suitable for women who cannot take oestrogen (e.g., breastfeeding, migraines)</li>
+        <li><strong>Injectable (e.g., Depo-Provera)</strong> — given every 3 months; no daily action required but fertility may take time to return</li>
+      </ul>
+
+      <h4>Long-Acting Reversible Contraception (LARC)</h4>
+      <ul>
+        <li><strong>Subdermal implant</strong> — small rod inserted under the skin of the upper arm; effective for up to 3 years</li>
+        <li><strong>Copper IUD</strong> — non-hormonal; effective for 5–10 years; can also be used as emergency contraception within 5 days of unprotected sex</li>
+        <li><strong>Hormonal IUD (Mirena-type)</strong> — reduces periods significantly; effective for 3–5 years</li>
+      </ul>
+
+      <h4>Barrier Methods</h4>
+      <ul>
+        <li>Male and female condoms — the only methods that also protect against sexually transmitted infections</li>
+        <li>Diaphragm / cap — used with spermicide</li>
+      </ul>
+
+      <h4>Emergency Contraception</h4>
+      <p>Available as a pill (most effective within 72 hours, up to 120 hours) or as a copper IUD (most effective option). Not intended as a regular method but important to know about.</p>
+
+      <div class="bm-disclaimer">Contraceptive choice should be discussed with a doctor. Certain methods are not suitable for women with specific health conditions.</div>
+    `
+  },
+  {
+    title: "Understanding the Stages of Labour and Delivery",
+    tag: "Labour",
+    date: "November 2024",
+    body: `
+      <p>Understanding what happens during labour can help reduce anxiety and improve your ability to communicate with your care team. Labour is divided into three stages.</p>
+
+      <h4>First Stage: Cervical Effacement and Dilation</h4>
+      <p>The cervix thins (effaces) and opens (dilates) from 0 to 10 centimetres. This is divided into a latent phase (slow progress to about 6cm) and an active phase (faster progress). Contractions become stronger, longer, and closer together.</p>
+
+      <h4>Second Stage: Pushing and Delivery</h4>
+      <p>Once fully dilated, the pushing stage begins. The baby descends through the pelvis through a series of movements: engagement, flexion, descent, internal rotation, extension, external rotation, and finally delivery of the shoulders and body. This stage can last from minutes to a few hours depending on whether it is a first delivery.</p>
+
+      <h4>Third Stage: Placental Delivery</h4>
+      <p>After the baby is born, the uterus continues to contract and the placenta separates and is delivered. Active management (an injection of oxytocin) is routinely given to reduce the risk of post-partum haemorrhage.</p>
+
+      <h4>When Things Do Not Progress Normally</h4>
+      <p>Prolonged labour, foetal distress, or certain foetal positions may require intervention — this could include augmentation with oxytocin, assisted delivery (vacuum or forceps), or caesarean section. These decisions are made based on the individual clinical picture.</p>
+
+      <div class="bm-disclaimer">Labour and delivery should be managed by qualified healthcare professionals. This article is educational only.</div>
+    `
+  },
+  {
+    title: "When Should You See a Gynaecologist? 8 Reasons Not to Wait",
+    tag: "General Health",
+    date: "October 2024",
+    body: `
+      <p>Many women delay seeking specialist gynaecological care, either because they assume symptoms are normal or because they feel uncomfortable. Here are eight situations where early assessment makes a real difference.</p>
+
+      <ul>
+        <li><strong>Irregular or absent periods</strong> — especially if this is a change from your normal pattern</li>
+        <li><strong>Painful periods (dysmenorrhoea)</strong> — severe pain that disrupts daily life is not normal and may indicate endometriosis or fibroids</li>
+        <li><strong>Abnormal bleeding</strong> — bleeding between periods, after sex, or after menopause requires investigation</li>
+        <li><strong>Pelvic pain</strong> — chronic or acute pelvic pain has numerous causes, many of which are treatable</li>
+        <li><strong>Unusual vaginal discharge</strong> — changes in colour, odour or consistency can indicate infection</li>
+        <li><strong>Difficulty conceiving</strong> — if you have been trying to conceive for over 12 months (or 6 months if over 35), specialist assessment is recommended</li>
+        <li><strong>Symptoms of PCOS</strong> — as outlined in our PCOS article, early diagnosis leads to better management outcomes</li>
+        <li><strong>Overdue cervical screening</strong> — regular Pap smears detect pre-cancerous changes before they become cancer</li>
+      </ul>
+
+      <h4>How Often Should You See a Gynaecologist?</h4>
+      <p>For women with no active symptoms or concerns, an annual check-up and cervical smear as appropriate is a reasonable baseline. If you have a known condition — PCOS, endometriosis, fibroids — review frequency will be guided by your specialist.</p>
+
+      <div class="bm-disclaimer">This information is general in nature. Please make an appointment with your doctor for a proper clinical assessment of any concerns.</div>
+    `
+  }
+];
+
+function openBlog(index) {
+  const b = blogs[index];
+  document.getElementById('blogModalContent').innerHTML = `
+    <div class="bm-header">
+      <button class="bm-close" onclick="closeBlog()">✕</button>
+      <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);margin-bottom:0.6rem;">${b.tag} · ${b.date}</div>
+      <h2>${b.title}</h2>
+    </div>
+    <div class="bm-body">${b.body}</div>
+  `;
+  document.getElementById('blogModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeBlog() {
+  document.getElementById('blogModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeBlogIfOutside(e) {
+  if (e.target === document.getElementById('blogModal')) closeBlog();
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeBlog(); });
+</script>
+</body>
+</html>
